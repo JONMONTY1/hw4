@@ -1,15 +1,13 @@
 <h1>Places</h1>
 
+<div class="d-grid gap-2 d-md-block">
+  <a href="/places/new"><button class="btn btn-primary" type="button">New Place</button></a>
+</div>
+
 <ul>
   <% for place in @places %>
     <% if @current_user !=nil %>
-    <a href="/places/<%= place["id"] %>"><%= place["name"] %></a>
+    <a href="/places/<%= place["id"]%>"><%=place["name"] %></a>
     <% end %>
   <% end %>
 </ul>
-
-<p>
-  <% if @current_user !=nil %>
-    <a href="/places/new">New place</a>
-  <% end %>
-</p>
