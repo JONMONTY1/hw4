@@ -2,10 +2,14 @@
 
 <ul>
   <% for place in @places %>
-    <li><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></li>
+    <% if @current_user !=nil %>
+    <a href="/places/<%= place["id"] %>"><%= place["name"] %></a>
+    <% end %>
   <% end %>
 </ul>
 
 <p>
-  <a href="/places/new">New place</a>
+  <% if @current_user !=nil %>
+    <a href="/places/new">New place</a>
+  <% end %>
 </p>
