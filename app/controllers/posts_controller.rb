@@ -9,7 +9,6 @@ class PostsController < ApplicationController
     if @current_user
       @post = Post.new
       @post["title"] = params["post"]["title"]
-      @post["image"] = params["post"]["image"]
       @post["description"] = params["post"]["description"]
       @post["posted_on"] = params["post"]["posted_on"]
       @post["place_id"] = params["post"]["place_id"]

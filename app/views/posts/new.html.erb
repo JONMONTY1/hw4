@@ -1,3 +1,4 @@
+<% if @current_user != nil %>
 <h1>New Post</h1>
 
 <%= form_with :model => @post do |form| %>
@@ -15,12 +16,15 @@
     <%= form.date_field "posted_on" %>
   </p>
 
-  <div class = "mb-3">
+  <div class="mb-3">
     <%= form.label "image", :class => "form-label" %>
     <%= form.file_field "image", :accept => "image/png,image/jpg,image/jpeg,image/gif", :class => "form-control" %>
   </div>
 
   <p>
-    <%= form.submit "Create Post", class: "btn btn-primary" %>
+    <%= form.submit %>
   </p>
+  <%= form.hidden_field "place_id" %>
+
+<% end %>
 <% end %>
